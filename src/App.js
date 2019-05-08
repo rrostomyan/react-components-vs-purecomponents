@@ -5,19 +5,32 @@ import Child2 from "./Child2";
 import User from "./User";
 
 class App extends React.Component {
-  state = {
-    x: 0,
-    y: 0,
-    z: 0,
-    user: {
-      userName: "Pepe"
-    }
-  };
+  // state = {
+  //   x: 0,
+  //   y: 0,
+  //   z: 0,
+  //   user: {
+  //     userName: "Pepe"
+  //   }
+  // };
+
+  constructor(props) {
+    super(props);
+    // Don't call this.setState() here!
+    this.state = {
+      x: 0,
+      y: 0,
+      z: 0,
+      user: {
+        userName: "Pepe"
+      }
+    };
+  }
 
   componentDidMount() {
     this.timer = setInterval(() => {
       const { z, user } = this.state;
-      user.userName = 'Aram' + Math.random() * 1000;
+      user.userName = "Aram" + Math.random() * 1000;
       this.setState({ z: z + 1 });
     }, 2000);
   }

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class Child1 extends React.Component {
   shouldComponentUpdate(nextProps, nextState, nextContext) {
@@ -17,5 +18,10 @@ class Child1 extends React.Component {
     );
   }
 }
+
+Child1.propTypes = {
+  x: PropTypes.number,
+  y: PropTypes.number
+};
 
 export default Child1;
